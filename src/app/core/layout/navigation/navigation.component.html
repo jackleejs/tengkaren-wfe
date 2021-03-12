@@ -1,0 +1,35 @@
+<div class="main-container">
+<mat-toolbar color="primary" >
+  <button type="button" mat-icon-button (click)="snav.toggle()">
+    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+  </button>
+   <div class="navbar-header">
+        <a class="navbar-brand" href="/">
+            <!-- Logo text -->
+            <span>
+                <img src="assets/images/logo2.png" class="nav-logo" alt="homepage">
+            </span>
+        </a>
+    </div>
+    <span fxFlex></span>
+    <button mat-icon-button matTooltip="Sign out" (click)="logout()">
+      <mat-icon>power_settings_new</mat-icon>
+    </button>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 0 : 0">
+  <mat-sidenav #snav id="snav" [mode]="mobileQuery.matches ? 'side' : 'over'" fixedTopGap="0" [opened]="mobileQuery.matches" [perfectScrollbar]="config">
+    <app-sidebar class="app-sidebar"></app-sidebar>
+  </mat-sidenav>
+  <mat-sidenav-content class="page-wrapper">
+    <perfect-scrollbar [config]="config">
+      <div class="page-content">
+      
+        <router-outlet></router-outlet>
+      
+      </div>
+    </perfect-scrollbar>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+</div>
+

@@ -1,0 +1,40 @@
+<div class="login-register bg-gray">
+	<div class="login-register-box" [@fadeIn]>
+		<mat-card>
+			<mat-card-content>
+				<div class="text-center">
+          <img alt="homepage" class="logo" src="assets/images/logo.png">
+          <form fxLayout="row wrap" class="m-b-10" [formGroup]="form" (ngSubmit)="submit()">
+          	<div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+          		<mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput [formControl]="form.controls['email']" type="email" autocomplete="off">
+                <mat-error *ngIf="form.controls['email'].hasError('required') && form.controls['email'].touched">Enter an email</mat-error>
+                <mat-error *ngIf="form.controls['email'].hasError('email') && form.controls['email'].touched">Enter a valid email</mat-error>
+              </mat-form-field>
+          	</div>
+          	<div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+          		<mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput [formControl]="form.controls['password']" [type]="show ? 'text' : 'password'" autocomplete="off">
+                <button mat-button matSuffix mat-icon-button aria-label="show" [class]="{'text-muted':!show}" (click)="showPassword()">
+                  <mat-icon>{{show ? "visibility" : "visibility_off"}}</mat-icon>
+                </button>
+                <mat-error *ngIf="form.controls['password'].hasError('required') && form.controls['password'].touched">Enter a password</mat-error>
+                <mat-error *ngIf="form.controls['password'].hasError('minlength') && form.controls['password'].touched">Password must be at least 6 characters</mat-error>
+              </mat-form-field>
+          	</div>
+          	<div fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="50" fxLayoutAlign="start center">
+          		<a class="link" [routerLink]="['/authentication/register']">Create an account</a>
+          	</div>
+            <div fxFlex.gt-sm="50" fxFlex.gt-xs="50" fxFlex="50" fxLayoutAlign="end center">
+              <button mat-raised-button type="submit" color="primary">Sign in</button>
+            </div>
+          </form>
+        </div>
+			</mat-card-content>
+		</mat-card>
+	</div>
+</div>
+
+

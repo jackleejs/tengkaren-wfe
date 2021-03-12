@@ -1,1 +1,529 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/theming';
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
+
+$mat-custom: (
+	50 : #e0e2ef,
+	100 : #b3b7d6,
+	200 : #8088bb,
+	300 : #4d589f,
+	400 : #26348b,
+	500 : #8bd8bd,
+	600 : #000e6e,
+	700 : #000c63,
+	800 : #243665,
+	900 : #000546,
+	A100 : #7a7dff,
+	A200 : #474bff,
+	A400 : #141aff,
+	A700 : #0005fa,
+	contrast: (
+		50 : #000000,
+		100 : #000000,
+		200 : #000000,
+		300 : #ffffff,
+		400 : #ffffff,
+		500 : #ffffff,
+		600 : #ffffff,
+		700 : #ffffff,
+		800 : #ffffff,
+		900 : #ffffff,
+		A100 : #000000,
+		A200 : #ffffff,
+		A400 : #ffffff,
+		A700 : #ffffff,
+		)
+	);
+
+$primary: mat-palette($mat-custom, 500);
+$accent: mat-palette($mat-custom, 800);
+$warn: mat-palette($mat-pink, 500);
+$theme: mat-light-theme($primary, $accent, $warn);
+$themeprimary: #8bd8bd;
+$themesecondary: #243665;
+$white: #ffffff;
+$sidebar-text: #8f999e;
+$sidebar-icons: #99abb4 ;
+$inverse: #2f3d4a;
+$radius: 4px;
+$darkprimary: #6AA38D;
+$bodyfont:'Poppins', sans-serif;
+
+@include angular-material-theme($theme);
+$custom-typography: mat-typography-config( 
+  $font-family: 'Poppins'
+); 
+@include mat-core($custom-typography);
+
+html, body { 
+	height: 100%; 
+}
+body { 
+	margin: 0;
+	font-family: $bodyfont;
+}
+a.link{
+	color:$themesecondary;
+	text-decoration: none;
+	&:hover, &:focus{
+		color:$themeprimary;
+	}
+}
+html body {
+	.m-0 {
+		margin: 0px;
+	}
+
+	.m-20 {
+		margin: 20px;
+	}
+
+	.m-l-5 {
+		margin-left: 5px;
+	}
+
+	.m-l-10 {
+		margin-left: 10px;
+	}
+
+	.m-l-15 {
+		margin-left: 15px;
+	}
+
+	.m-l-20 {
+		margin-left: 20px;
+	}
+
+	.m-l-30 {
+		margin-left: 30px;
+	}
+
+	.m-l-40 {
+		margin-left: 40px;
+	}
+
+	.m-r-5 {
+		margin-right: 5px;
+	}
+
+	.m-r-10 {
+		margin-right: 10px;
+	}
+
+	.m-r-15 {
+		margin-right: 15px;
+	}
+
+	.m-r-20 {
+		margin-right: 20px;
+	}
+
+	.m-r-30 {
+		margin-right: 30px;
+	}
+
+	.m-r-40 {
+		margin-right: 40px;
+	}
+
+	.m-t-0 {
+		margin-top: 0px;
+	}
+
+	.m-t-5 {
+		margin-top: 5px;
+	}
+
+	.m-t-10 {
+		margin-top: 10px;
+	}
+
+	.m-t-15 {
+		margin-top: 15px;
+	}
+
+	.m-t-20 {
+		margin-top: 20px;
+	}
+
+	.m-t-30 {
+		margin-top: 30px;
+	}
+
+	.m-t-40 {
+		margin-top: 40px;
+	}
+
+	.m-b-0 {
+		margin-bottom: 0px;
+	}
+
+	.m-b-5 {
+		margin-bottom: 5px;
+	}
+
+	.m-b-10 {
+		margin-bottom: 10px;
+	}
+
+	.m-b-15 {
+		margin-bottom: 15px;
+	}
+
+	.m-b-20 {
+		margin-bottom: 20px;
+	}
+
+	.m-b-30 {
+		margin-bottom: 30px ;
+	}
+
+	.m-b-40 {
+		margin-bottom: 40px;
+	}
+}
+html body {
+	.font-bold {
+		font-weight: 700;
+	}
+
+	.font-normal {
+		font-weight: normal;
+	}
+
+	.font-light {
+		font-weight: 300;
+	}
+	.font-medium {
+		font-weight: 500;
+	}
+	.font-16 {
+		font-size: 16px;
+	}
+	.font-14 {
+		font-size: 14px;
+	}
+	.font-10 {
+		font-size: 10px;
+	}
+	.font-12 {
+		font-size: 12px;
+	}    
+	.font-18 {
+		font-size: 18px;
+	}
+	.font-20 {
+		font-size: 20px;
+	}
+	.font-22 {
+		font-size: 22px;
+	}
+	.font-24 {
+		font-size: 24px;
+	}
+	.font-26 {
+		font-size: 26px;
+	}
+}
+.text-center {
+	text-align: center;
+}
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+.text-muted {
+	color: #99abb4!important;
+}
+.text-danger {
+	color: #fc4b6c!important;
+}
+.bg-gray{
+	background: #F7F7F7;
+}
+.login-register {
+	height: 100vh;
+	display: flex;
+	background-size: cover;
+	align-items: center;
+	.mat-card {
+		margin: 0px 15px;
+	}
+	.mat-form-field {
+		width: 100%;
+	}
+	.login-register-box {
+		max-width: 400px;
+		min-width: 280px;
+		margin: 0 auto;
+		vertical-align: middle;
+	}
+	.logo{
+		max-width: 150px;
+		padding-top: 10px;
+		padding-bottom: 15px;
+	}
+}
+
+.sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+}
+
+.sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+     `<body>` to be our scrolling element for mobile layouts. */
+  flex: 1 0 auto;
+}
+
+.topbar {
+  position: relative;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+}
+
+mat-toolbar{  
+    &.topbar{
+        padding: 0px 15px;
+    }
+    .navbar-header {
+        padding-left:20px;
+        text-align: center;
+        .navbar-brand {
+            display: flex;
+            line-height: 18px;
+            align-items: center;
+            b {
+               margin-right: 5px;
+            }
+            .nav-logo{
+            	max-height:30px;
+            }
+        }
+    }
+    
+    .profile-pic{
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+    }
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+html .page-wrapper {
+  height: calc(100vh - 64px);
+  .page-content {
+    padding: 20px;
+    height: calc(100vh - 128px);
+  }
+}
+
+.user-profile {
+  position: relative;
+  background-size: cover;
+
+  .profile-img {
+    width: 50px;
+    margin-left: 30px;
+    padding: 31px 0;
+    border-radius: 100%;
+    &::before {
+      -webkit-animation: 2.5s blow 0s linear infinite;
+      animation: 2.5s blow 0s linear infinite;
+      position: absolute;
+      content: '';
+      width: 50px;
+      height: 50px;
+      top: 31px;
+      margin: 0 auto;
+      border-radius: 50%;
+      z-index: 0;
+    }
+    @-webkit-keyframes blow {
+      0% {
+        box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.1);
+        opacity: 1;
+        -webkit-transform: scale3d(1, 1, 0.5);
+        transform: scale3d(1, 1, 0.5);
+      }
+      50% {
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
+        opacity: 1;
+        -webkit-transform: scale3d(1, 1, 0.5);
+        transform: scale3d(1, 1, 0.5);
+      }
+      100% {
+        box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        -webkit-transform: scale3d(1, 1, 0.5);
+        transform: scale3d(1, 1, 0.5);
+      }
+    }
+    @keyframes blow {
+      0% {
+        box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.1);
+        opacity: 1;
+        -webkit-transform: scale3d(1, 1, 0.5);
+        transform: scale3d(1, 1, 0.5);
+      }
+      50% {
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
+        opacity: 1;
+        -webkit-transform: scale3d(1, 1, 0.5);
+        transform: scale3d(1, 1, 0.5);
+      }
+      100% {
+        box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        -webkit-transform: scale3d(1, 1, 0.5);
+        transform: scale3d(1, 1, 0.5);
+      }
+    }
+    img {
+      width: 100%;
+      border-radius: 100%;
+    }
+  }
+  .profile-text {
+    padding: 5px 0px;
+    position: relative;
+    cursor: pointer;
+    white-space: nowrap;
+    > a {
+      color: #ffffff !important;
+      padding: 6px 30px;
+      background: rgba(0, 0, 0, 0.5);
+      display: block;
+      white-space: nowrap;
+      &:after {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+      }
+    }
+  }
+}
+
+.mat-sidenav {
+  width: 240px;
+  padding-top: 0px;
+}
+#snav {
+  box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08);
+  .mat-drawer-inner-container{
+    overflow:visible;
+    height: auto;
+  }
+  .mat-nav-list .mat-list-item {
+    height: auto;
+    &:hover {
+      background: none;
+    }
+
+    .mat-list-item-content {
+      display: block;
+      padding: 0px 0px;
+      &:hover {
+        background: none;
+        > a {
+          color: $themeprimary;
+        }
+      }
+    }
+
+    a {
+      height: 45px;
+      padding: 0 10px;
+      margin-bottom: 10px;
+      align-items: center;
+      display: flex;
+      font-size: 15px;
+      white-space: nowrap;
+      color: $sidebar-text;
+      mat-icon:not(.dd-icon) {
+        margin-right: 8px;
+      }
+      mat-icon {
+        color: $sidebar-icons;
+      }
+      .dd-icon {
+        font-size: 16px;
+        width: 16px;
+        transition: 0.2s ease-in;
+        margin: 5px 0 5px 5px;
+        height: 16px;
+      }
+    }
+    &.selected > .mat-list-item-content > a {
+      background: $themesecondary;
+      border-radius: $radius;
+      color: $white;
+
+      mat-icon {
+        color: $white;
+      }
+      .dd-icon {
+        -webkit-transform: rotate(-180deg);
+        transform: rotate(-180deg);
+      }
+    }
+    &.selected .sub-item .mat-list-item-content a.selected {
+      background: transparent;
+      color: $inverse;
+      font-weight: 500;
+    }
+  }
+  .app-sidebar > .mat-nav-list > .mat-list-item > .mat-list-item-content {
+    padding: 0px 15px;
+  }
+  .mat-nav-list .sub-item {
+    display: none;
+    margin-top: -15px;
+    a {
+      padding-left: 40px;
+      height: 50px;
+      margin-bottom: 0px;
+    }
+    .child-sub-item {
+      display: none;
+      margin-top: -15px;
+      a {
+        padding: 0 0 0 55px;
+        height: 50px;
+        margin-bottom: 0px;
+      }
+    }
+  }
+  .seperator {
+    cursor: text;
+    font-size: 13px;
+    margin-bottom: 15px;
+    margin-top: 25px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .selected {
+    .sub-item {
+      display: block;
+      .selected + {
+        .child-sub-item {
+          display: block;
+        }
+      }
+    }
+  }
+}
